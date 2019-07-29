@@ -5,8 +5,8 @@ class Image
   end
 
   def output_image
-    for individualArray in @pixelData
-      puts individualArray.join
+    for pixel in @pixelData
+      puts pixel.join
     end
   end
   
