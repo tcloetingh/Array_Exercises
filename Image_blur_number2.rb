@@ -13,10 +13,8 @@ def output_image
 end
 
 
-def bloom(distance = 1)
+def bloom
 
-
-distance.times {
 
 	indices_array =[]
 	@pixel_array.each_with_index do |row, row_index|
@@ -34,7 +32,7 @@ distance.times {
        @pixel_array[coordinate[0]][coordinate[1]+1] = 1 if coordinate[1] < @pixel_array[0].length - 1
     end
      
-    }
+
     
 end 
 
@@ -46,16 +44,15 @@ end
 
 image = Image.new([
   [0, 0, 0, 0, 0],
-  [0, 1, 0, 0, 1],
   [0, 0, 0, 1, 0],
-  [0, 0, 0, 0, 0]
+  [0, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0]
 ])
 
 
 
-#pass manhatten distance as bloom parameter
 
-image.bloom()
+image.bloom
 image.output_image
 
 
